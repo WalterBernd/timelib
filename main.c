@@ -8,22 +8,33 @@
 #include <stdlib.h>
 #include "timelib.h"
 
-
-
-
-int is_Leapyear(int year);
-int inputdate(int day, int month, int year);
-int get_days_for_month(int month, int year);
-int exists_date(int day, int month, int year);
-int exists_date(int day, int month, int year);
-int day_of_the_year(int day, int month, int year);
-
-
-
-
-
 int main()
 {
-    printf("Tag des Jahres: %i\n", day_of_the_year(31, 12, 2018));
-    return 0;
+   do{
+
+   int year = 2000;
+   int month = 1;
+   int day = 1;
+   int test = 0;
+
+    printf("Year:");
+    scanf("%i", &year);
+    printf("\nMonth:");
+    scanf("%i", &month);
+    printf("\nDay:");
+    scanf("%i", &day);
+    test = day_of_the_year(day, year, month);
+    if(test != -1)
+    {
+        printf("The day is: %i", test);
+    }
+    else
+    {
+        printf("This date is wrong, please try an other one! ");
+    }
+    printf("\n");
+    printf("\n");
+}while(1);
+
+return 0;
 }

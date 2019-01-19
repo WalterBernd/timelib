@@ -37,7 +37,7 @@ int is_Leapyear(int year)
 /**
 Input
 **/
-int inputdate(int day, int month, int year)
+int input_date(int day, int month, int year)
 {
     return 0;
 }
@@ -82,6 +82,19 @@ int exists_date(int day, int month, int year)
         if(month >= 1 && month <= 12)
         {
             test_days = get_days_for_month(month, year);
+
+            if (test_days <= 31 && test_days >= 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            return 0;
         }
     }
     else
@@ -96,12 +109,20 @@ returns: number of the day
  **/
 int day_of_the_year(int day, int month, int year)
 {
-   int Counter = day;
 
-    for(int i = 1; i <= (month - 1) ; i++)
+    int Counter = day;
+
+    if (exists_date(day, month, year) == 1 )
     {
-        int j = get_days_for_month(i, year);
-        Counter += j;
+        for(int i = 1; i <= (month - 1) ; i++)
+        {
+            int j = get_days_for_month(i, year);
+            Counter += j;
+        }
+        return Counter;
     }
-    return Counter;
+    else
+    {
+            return -1;
+    }
 }
