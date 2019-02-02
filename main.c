@@ -11,19 +11,24 @@
 int main()
 {
    do{
-
+    // Add the integer
    int year = 2000;
    int month = 1;
    int day = 1;
    int test = 0;
+    //Add the pointer
+   int *pday;
+   int *pmonth;
+   int *pyear;
+   // set pointer to integer
+   pday = &day;
+   pmonth = &month;
+   pyear = &year;
 
-    printf("Year:");
-    scanf("%i", &year);
-    printf("\nMonth:");
-    scanf("%i", &month);
-    printf("\nDay:");
-    scanf("%i", &day);
-    test = day_of_the_year(day, year, month);
+   input_date(&day, &month, &year);
+
+
+    test = day_of_the_year(day, month, year);
     if(test != -1)
     {
         printf("The day is: %i", test);

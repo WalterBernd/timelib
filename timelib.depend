@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1549128556 source:g:\portablegit\timelib\main.c
+	<stdio.h>
+	<stdlib.h>
+	"timelib.h"
+
+1549128492 source:g:\portablegit\timelib\timelib.c
+	<stdio.h>
+	<stdlib.h>
+
+1549127070 g:\portablegit\timelib\timelib.h
+
+1548550176 source:h:\portablegit\timelib\main.c
+	<stdio.h>
+	<stdlib.h>
+	"timelib.h"
+
+1547919834 h:\portablegit\timelib\timelib.h
+
+1547921252 source:h:\portablegit\timelib\timelib.c
+	<stdio.h>
+	<stdlib.h>
+

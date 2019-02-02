@@ -14,10 +14,10 @@ int is_Leapyear(int year)
     {
         if(year % 400 == 0)
         {
-           i = 1;
-           // return 1;
+            i = 1;
+            // return 1;
         }
-        if(year % 4 == 0 && year % 100 != 0)
+        else if(year % 4 == 0 && year % 100 != 0)
         {
             i = 1;
             //return 1;
@@ -35,11 +35,19 @@ int is_Leapyear(int year)
 }
 
 /**
-Input
+Input´with pointer
 **/
-int input_date(int day, int month, int year)
+int input_date(int *pday, int *pmonth, int *pyear)
 {
-    return 0;
+    printf("Please insert the day\n");
+    scanf("%i",pday);
+    printf("Please insert the month\n");
+    scanf("%i",pmonth);
+    printf("Please insert the year\n");
+    scanf("%i",pyear);
+
+    //printf("You can Quit with 'Ctrl + c'");
+
 }
 
 /**
@@ -76,15 +84,16 @@ returns 0 if false
 int exists_date(int day, int month, int year)
 {
     int test_days = 0;
-    #define FEB 28
+#define FEB 28
     if(year >= 1582 && year <= 2400)
     {
         if(month >= 1 && month <= 12)
         {
             test_days = get_days_for_month(month, year);
 
-            if (test_days <= 31 && test_days >= 1)
+            if (test_days <= get_days_for_month(month, year) && test_days >= 1)
             {
+
                 return 1;
             }
             else
@@ -123,6 +132,6 @@ int day_of_the_year(int day, int month, int year)
     }
     else
     {
-            return -1;
+        return -1;
     }
 }
